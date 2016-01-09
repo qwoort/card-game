@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="app">
+    <div id="statistics">
+      <div id="timer">Time: {{main.timer.time}}</div>
+      <div id="steps-counter">Steps: {{main.stepsCount}}</div>
+    </div>
+    <div id="board-wrapper">
+      <table id="board">
+        <tr class="tabRow" ng-repeat="row in main.gameMatrix">
+          <td
+            ng-repeat="card in row track by card.id"
+            ng-click="main.openCard(card)"
+            class="tabCell {{card.name}}"
+            ng-class="{opened: card.opened}"
+            ></td>
+        </tr>
+      </table>
+      <div id="placeholder" ng-click="main.startGame()" ng-show="main.waitingToPlay">
+        <div class="placeholder-text" ng-show="main.noOneGameStillWasNotWinned">Start game</div>
+        <div class="placeholder-text" ng-show="!main.noOneGameStillWasNotWinned">You win<br/>Play again</div>
+      </div>
+    </div>
+  </div>
+</div>

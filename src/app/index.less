@@ -1,0 +1,88 @@
+// bower:less
+// endbower
+
+body{
+  background: #000f24;
+  color: #FFFFFF;
+}
+
+.app{
+  padding-top: 100px;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+#statistics{
+  height: 32px;
+}
+
+#timer, #steps-counter{
+  width: 50%;
+  float: left;
+  text-align: center;
+}
+
+#board-wrapper{
+
+  width: inherit;
+  height: inherit;
+
+  #board {
+    width: inherit;
+    float: left;
+
+    .tabRow {
+      height: 100px;
+    }
+
+    .tabCell {
+      border: 5px solid #FFFABC;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+
+      &:not(.opened){
+        background-color: #008a89;
+      }
+    }
+  }
+}
+
+#placeholder{
+
+  position: absolute;
+  width: inherit;
+  height: 505px;
+  background-color: rgba(0,0,0,0.9);
+
+  .placeholder-text{
+    text-align: center;
+    font-size: 32px;
+    margin-top: 185px;
+  }
+}
+
+.cardClassBuilder(@number) {
+  &.card-@{number} {
+    background-image: url("../assets/images/cards/@{number}.jpg");
+  }
+}
+
+.opened{
+  .cardClassBuilder(0);
+  .cardClassBuilder(1);
+  .cardClassBuilder(2);
+  .cardClassBuilder(3);
+  .cardClassBuilder(4);
+  .cardClassBuilder(5);
+  .cardClassBuilder(6);
+  .cardClassBuilder(7);
+  .cardClassBuilder(8);
+  .cardClassBuilder(9);
+  .cardClassBuilder(10);
+  .cardClassBuilder(11);
+  .cardClassBuilder(12);
+}
+
+// injector
+// endinjector
